@@ -1,0 +1,237 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* General styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+
+  }
+
+  /* Form container */
+  div[align="center"] {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+  }
+
+  /* Labels */
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  /* Inputs */
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  /* Buttons */
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 5px;
+    transition: 0.3s;
+
+  }
+
+  input[type="reset"] {
+    background: #dc3545;
+  }
+
+  input[type="button"]:hover,
+  input[type="submit"]:hover,
+  input[type="reset"]:hover {
+    opacity: 0.8;
+
+  }
+
+  /* Table styling */
+  table {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin: auto;
+    background: white;
+    border-collapse: collapse;
+    border: 3px solid #ddd;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  th {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+  }
+
+  td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+
+  tr:nth-child(even) {
+    background: #f9f9f9;
+  }
+
+
+  td input[type="button"] {
+    background: #ff5722;
+  }
+
+  td input[type="button"]:hover {
+    background: #e64a19;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    div[align="center"] {
+      width: 90%;
+    }
+
+    table {
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+.golder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+  .boxsizing {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background-color: #007BFF;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .boxsizing:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+
+  .boxsizing:active {
+    background-color: #004099;
+    transform: scale(0.98);
+  }
+
+
+</style>
+<body>
+<h1>Student Form </h1><br>
+<a href="display.html" class="boxsizing" >Student Data</a>
+<br>
+<br>
+
+  <div align="center" >
+    <label for="input_name">Name:</label>
+    <input type="text" id="input_name" placeholder="Enter Your Name..." required>
+    <br>
+    <br>
+    <label for="input_age">Age:</label>
+    <input type="number" id="input_age" placeholder="Enter Your Age..." required>
+    <br>
+    <br>
+    <label for="input_city">City:</label>
+    <input type="text" id="input_city" placeholder="Enter Your City..." required>
+    <br><br>
+    <label for="input_email">E-mail:</label>
+    <input type="email" id="input_email" placeholder="Enter Your Email..." required>
+    <br><br>
+    <label for="input_phone">Number:</label>
+    <input type="number" id="input_phone" minlength="9" maxlength="9" placeholder="Phone Number..." required>
+    <br><br>
+    <label for="input_post">Post:</label>
+    <input type="text" id="input_post" placeholder="Enter your post..." required>
+    <br><br>
+    <label for="input_startdate">Start Date:</label>
+    <input type="date" id="input_startdate" placeholder="Enter Your Date..." required>
+    <br><br>
+    <label for="input_profile">Profile:</label>
+    <input type="text" id="input_profile" placeholder="Enter URl" required>
+    <br>
+    <input onclick="onSubmit()" type="submit" value="submit">
+    <input type="reset" value="Reset">
+  </div>
+  <br>
+  <br>
+<h1>Student List</h1>
+<div >
+  <table align="center" border="3" width="100%" cellspacing="0" id="user_list_table" bgcolor="red" botdercolor="blue">
+    <thead>
+    <tr>
+      <th>No.</th>
+      <th>Name:</th>
+      <th>Age:</th>
+      <th>City:</th>
+      <th>Email:</th>
+      <th>Number:</th>
+      <th>Post:</th>
+      <th>Start Date:</th>
+      <th>Profile</th>
+      <th>Action</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr align="center">
+      <td>1</td>
+      <td>John</td>
+      <td>25</td>
+      <td>New York</td>
+      <td>Penglin@gmail.com</td>
+      <td>012727177</td>
+      <td>8923234383</td>
+      <td>01.01.2005</td>
+      <td>img</td>
+      <td>
+        <input  type="button" value="Edit">
+        <input type="button" value="Delete">
+      </td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>
+<app-home></app-home>
+
+</body>
+<script src="javascript.js"></script>
+</html>

@@ -1,0 +1,121 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    /* General body styling */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+
+    }
+
+    /* Heading style */
+    h1 {
+        color: #333;
+        font-size: 28px;
+
+    }
+
+    /* Card Container */
+    .container-fluid {
+        display: flex;
+        align-items: center;
+        height: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    /* Card Box */
+    .card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        text-align: center;
+        display: flex;
+    }
+
+    /* Input Fields */
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="date"] {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    /* Buttons */
+    button, input[type="submit"] {
+        background: #007bff;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 10px;
+        transition: 0.3s;
+    }
+
+    button:hover, input[type="submit"]:hover {
+        background: #0056b3;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 600px) {
+        .card {
+            width: 90%;
+        }
+    }
+    .boxsizing {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        background-color: #007BFF;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .boxsizing:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .boxsizing:active {
+        background-color: #004099;
+        transform: scale(0.98);
+    }
+</style>
+<body>
+<h1>Student Form </h1>
+
+    <div class="container-fluid">
+        <br>
+        <div class="row" id="main_box">
+            <div class="card" style="width: 100%;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="boxsizing">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="display.js"></script>
+</html>
